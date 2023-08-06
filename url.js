@@ -20,6 +20,11 @@ function copyToClip(content, message) {
         alert(message);
     }
 }
+
+// function wait_load(){
+
+// }
+
 // //可以实现每次打开新页面时在浏览器输出一句话
 // alert('在这输入你想显示的话') 
 
@@ -38,17 +43,35 @@ function copyToClip(content, message) {
 //    });
 // const x = document.querySelector("#pagelet_frs-header\\/pagelet\\/head > div > div.head_content > div.card_top_wrap.clearfix.card_top_theme > div.card_top.clearfix > div.card_title > a");
 // 
-var x = getElementByXpath("/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul");
-const len = x.getElementsByTagName("li").length;
-console.log(len);
-// x = 10;
-// res = [];
-copyToClip("123321","ok");
-for(let i = 0; i < len; ++i){
-    var element = getElementByXpath(`/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul/li[${i}]/div/div[2]/div[1]/div[1]/a`);
-    // res.appendChild(element.innerText);
-    console.log(element.innerText);
+function copy(){
+    const len = x.getElementsByTagName("li").length;
+    console.log(len);
+    // x = 10;
+    // res = [];
+    // copyToClip("123321","ok");
+    for(let i = 0; i < len; ++i){
+        var element = getElementByXpath(`/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul/li[${i}]/div/div[2]/div[1]/div[1]/a`);
+        // console.log(`/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul/li[${i}]/div/div[2]/div[1]/div[1]/a`);
+        if(element != null)
+        // res.appendChild(element.innerText);
+            console.log(element.innerText);
+    }
 }
+var txt = getElementByXpath("/html/body/div[3]/div/div[1]/div[4]/div/div[3]/div[2]/div[2]/p");
+alert(txt);
+if(txt != null){
+	p = document.createElement("button");
+    // p.innerhtml = '<button onclick="copy()">点我复制</button>';
+    // p.addEventListener('click', copy);
+	p.innerText='点我';
+    p.onclick = copy;
+	txt.appendChild(p);
+    // innerText = txt.innerText;
+    // extra = "<p onclick='copy()'>点我</p>";
+    // txt.innerText = innerText + extra;
+}
+var x = getElementByXpath("/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul");
+
 
 // const y = getElementByXpath("/html/body/div[3]/div/div[2]/div/div/div[1]/div/div/div/div[4]/ul/li[i]/div/div[2]/div[1]/div[1]/a");
 // console.log(len);
