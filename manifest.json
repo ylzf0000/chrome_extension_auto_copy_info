@@ -1,0 +1,21 @@
+{
+  "name":"复制任务详情",
+  "version":"1",
+  "manifest_version":3,
+  "description":"复制任务详情",
+  "content_scripts":[
+      {
+          "matches":[
+              "https://tieba.baidu.com/*"
+          ],
+          "js":[
+              "lib/jquery.min.js",
+              "url.js"
+          ]
+      }
+  ],
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "hello_extensions.png"
+  }
+}
